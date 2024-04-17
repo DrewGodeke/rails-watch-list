@@ -7,6 +7,6 @@ class Bookmark < ApplicationRecord
   belongs_to :movie
   belongs_to :list
 
-  # Custom validation to ensure uniqueness of bookmark per list and movie
+  # validation to ensure uniqueness of bookmark per list and movie
   validates :movie_id, uniqueness: { scope: :list_id }
 end
