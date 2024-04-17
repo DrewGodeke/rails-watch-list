@@ -1,7 +1,7 @@
 # app/models/bookmark.rb
 class Bookmark < ApplicationRecord
   # Validations
-  validates :comment, presence: true
+  validates :comment, presence: true, length: { minimum: 6 }
 
   # Associations
   belongs_to :movie
