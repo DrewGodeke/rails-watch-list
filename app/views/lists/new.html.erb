@@ -1,0 +1,13 @@
+<h1>Lists#new</h1>
+<p>Find me in app/views/lists/new.html.erb</p>
+<!-- app/views/lists/new.html.erb -->
+<h1>New List</h1>
+
+<%= form_with(model: @list, url: lists_path) do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <%= form.submit "Create List" %>
+<% end %>
