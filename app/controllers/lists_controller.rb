@@ -5,6 +5,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @bookmark = @list.bookmarks.build # Initialize a new bookmark associated with the list
   end
 
   def new
