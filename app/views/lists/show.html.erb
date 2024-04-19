@@ -8,8 +8,8 @@
   <% end %>
 </ul>
 
-<h4>Add Movie to List</h4>
-<%= form_with(model: [@list, @bookmark], url: list_bookmarks_path(@list)) do |f| %>
-  <%= f.collection_select :movie_id, Movie.all, :id, :title %>
-  <%= f.submit "Add Movie" %>
+<p>Add Movie to List</p>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :movie_id, collection: Movie.all, label_method: :title, value_method: :id, label: "Movie" %>
+  <%= f.button :submit, "Add Movie" %>
 <% end %>

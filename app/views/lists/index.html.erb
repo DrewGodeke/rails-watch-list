@@ -8,3 +8,8 @@
 </ul>
 
 <%= link_to "New List", new_list_path %>
+
+<%= simple_form_for List.new do |f| %>
+  <%= f.input :name, label: 'Name' %>
+  <%= f.button :submit, "Create List" %>
+<% end %>
